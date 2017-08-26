@@ -1,0 +1,16 @@
+header {
+  background-color: lightgray;
+}
+
+h4 {
+  font-style: italic;
+  font-weight: lighter;
+}
+
+.emphasis {
+  font-weight: bold;
+}
+
+.current  {
+  color: red;
+}

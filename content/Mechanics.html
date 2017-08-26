@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Mechanics</title>
+      <link rel="stylesheet" type="text/css" href="../resources/css/style.css">
+  </head>
+  <body>
+    <header>
+      <h1 id="top">Pygmy Love Circus</h1>
+      <ul>
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="./Creation.html">Character Creation</a></li>
+        <li class="current">Mechanics</li>
+        <li><a href="./Combat.html">Combat</a></li>
+        <li><a href="./Tasks.html">Tasks</a></li>
+      </ul>
+    </header>
+    <h2>Mechanics</h2>
+    <nav>
+      <h2>Mechanics Page Navigation</h2>
+      <ul>
+        <li><a href="#wounds">Wounds</a></li>
+        <li><a href="#recovery_health">Recovery</a></li>
+        <li><a href="#infection">Infection</a></li>
+        <li><a href="#fatigue">Fatigue and Mitigation</a></li>
+        <li><a href="#health_table">Health Reference Table</a></li>
+        <li><a href="#attributes">Attributes</a></li>
+      </ul>
+    </nav>
+
+    <div class="content">
+      <h2 id="wounds">Health and Wounds</h2>
+      <p>Lose all of your health and your character dies. Health is reduced by incurring Wounds accumulated from unmitigated damage taken.
+        Wounds are exceptionally difficult to recover and should be avoided at all costs, thus making defensive strategy an important aspect to this game.
+        When wounded for more than 25% of the player’s total health pool, infection becomes a risk. This risk increases for each 25% of health missing.
+        See <a href="#recovery">Recovering Health</a> and <a href="#infection">Infection</a>.</p>
+    </div>
+    <div class="content">
+      <h3 id="recovery_health">Recovering Health</h3>
+      <p>Characters naturally heal wounds when resting and recovering. This value is determined by the character’s Recovery value.
+        The Recovery value represents the number of cards drawn when recovering from wounds.
+        It also serves as a constant for Exhaustion Recovery calculations (See <a href="#exhaustion">Exhaustion</a> and <a href="#recovery_exhaustion">Exhaustion Recovery</a>).
+        The Endurance attribute increases the Recovery value.
+        <br \>
+        A recovery test can be failed, resulting in infection (See <a href="#infection">Infection</a>).
+        Resting conditions, potions, poultices, healing abilities, symbionts, technology, and artifacts
+        can aid the recovery process by reducing the risk of infection and increasing the Recovery value.
+        Abilities that heal wounds are extremely rare and powerful.
+        Avoiding and mitigating damage is the best strategy to survive. </p>
+      <h3>Recovery Values</h3>
+      <h4>Draw cards equal to your Recovery value. Add the cards together for the total amount recovered using the following values.</h4>
+        <ul>
+          <li>2-10: Value of the cards drawn.</li>
+          <li>Face Cards: 10.</li>
+          <li>Ace: 20.</li>
+          <li>Joker: Full Recovery.</li>
+        </ul>
+    </div>
+    <div class="content">
+      <h3 id="infection">Infection</h3>
+      <h5><a href="#top">Go to top</a></h5>
+      <h4>Infection is a system designed to add immersion and consequence to violent encounters. Feel free to exclude this mechanic based on your group's playstyle and desires.</h4>
+      <p>Infection can occur when recovering from Wounds and failing the recovery test.
+        Failing a stage one threat: when drawing for <a href="#recovery_health">Recovery</a>, if more 2s are drawn than face cards, a character suffers from infection.
+        Infection risk increases by one threat tier for every 25% of the health pool missing to <a href="#wounds">Wounds</a>.
+        Infections always advance only one threat stage when failed, five total failures must occur before a character dies to infection.
+        Each face card drawn (greater than number of threat cards drawn) reduces an infection by one stage.
+        Sterile treatment, wound dressing, and locations can reduce these threat stages.
+        Filthy conditions, physical stress, delayed treatment, and other such factors can increase the threat stages of Infection.
+        No health is recovered when a recovery test is failed.
+        Drawing threat cards again, without drawing face cards to counteract them, will advance the Infection an addiitonal stage.
+        See Infection s table.
+        <br />
+        Players suffering from Infection must gain <a href="#immunization">Immunity</a> and Fully Recover before Infection deficits cease.
+      </p>
+      <img id="table_infection" src="../resources/images/infection_threat.png" alt="Infection Threat Table">
+      <h4>Example:</h4>
+      <p>A character with 20 health suffered 6 damage in Wounds, leaving ~70% of their health remaining.
+        The character has a Recovery value of 1.
+        The character eats and sleeps, healing 1 draw worth of Wounds with a stage 1 risk of Infection.
+        The player draws a card, if the card is a 2, the character develops an Infection and suffers detrimental effects (See the Infection Table above).
+        In this case, they would suffer -1 draw when using the infected limb.
+        If the player draws a 3 or higher, the character instead recovers the face value of health and avoids infection (jack, queen, and king are all 10 health; ace is 20 health).
+        <br \>
+        If for instance, the character had instead suffered 10 damage, leaving 50% health remaining, the infection threat would be at stage 2 and would occur on 2s and 3s.
+        Drawing either a 2 or a 3 would result in a stage 2 infection suffering -1 to all draws and a penalty to <a href="#Exhaustion">Exhaustion</a> cost.
+        If the character had a higher Recovery value and thus multiple Recovery draws, drawing face cards counteracts an equal number of threat cards when drawing for Infection Threats. </p>
+      <h3 id="immunization">Infection Recovery and Immunization</h3>
+      <h4>Immunization</h4>
+      <p>When a character is suffering from Infection, they must Immunize before they can Fully Recover.
+        To Immunize to an infection, the character must draw more face cards than threat cards on a Recovery draw.</p>
+      <h4>Full Recovery</h4>
+      <p>When a character is Immunized, drawing threat cards no longer advances the infection, but the character still suffers the detrimental effects of the infection.
+        The infection must be reduced to stage 0 before fading.
+        An Infection stage is reduced by one for each face card the player draws greater than threat cards for their current stage.</p>
+    </div>
+    <div class="content">
+      <h2 id="fatigue">Fatigue</h2>
+      <h5><a href="#top">Go to top</a></h5>
+      <p>Fatigue in incurred when damage is mitigated by Damage Mitigation.
+        By default, fatigue is 200% of a character's maximum health pool plus 200% of their <a href="#brains">Brains</a> value.
+        If Fatigue reaches zero, the character succumbs to exhaustion and falls unconscious.
+        Fatigue is fully recovered after a short rest (hour or so) and is often recoverable by powers, items, and potions.
+        <span class="emphasis">Taking cover in combat for a full round (not attacking or being attacked) will allow a character to perform a Recovery draw to replenish Fatigue.</span></p>
+      <h3>Damage Mitigation</h3>
+      <p>Amount of damage converted to Fatigue damage each hit.
+        This allows heavily armored characters to take hits and recover fatigue without incurring cumulative Wounds.
+        Very effective against low damage rapid attacks, as each hit receives its own mitigation calculation.
+        Less effective against slow heavy damage attacks. <span class="emphasis">Unmitigated damage results in Wounds.</span></p>
+    </div>
+    <div class="content">
+      <h2 id="health_table">Quick Reference Table</h2>
+      <h5><a href="#top">Go to top</a></h5>
+      <img src="../resources/images/health_table.png" alt="Health Table">
+    </div>
+    <div class="content">
+      <h5><a href="#top">Go to top</a></h5>
+      <h2 id="attributes">Attributes</h2>
+      <p>There are three primary attributes: <span class="emphasis">Brawn, Brains, and Bravado</span>.
+        <br />
+        Brawn is associated with physical feats, Brains with mental feats, and Bravado with social feats.
+        These attributes are the backbone of a character.</p>
+        <h4>Uses:</h4>
+          <ol>
+            <li><span class="emphasis">Primary form of character advancement.</span> Attributes are granted for completing a goal, or failing horribly.
+              Attributes are distributed much in the same way "experience" would be granted in other games.</li>
+            <li><span class="emphasis">Primary resource for most actions.</span>
+              Attributes are recoverable resources used to perform feats.
+              They are <a href="#exhaustion">Exhausted</a> with use and Recovered through <a href="#recovery_exhaustion">Exhaustion Recovery draws</a>.</li>
+            <li><span class="emphasis">Grants higher Statistic scores.</span>
+              Statistic scores are the primary means of unlocking <a href="#knacks">Knacks</a> and are extremely important to <a href="#skills">Skills</a>.</li>
+            <li><span class="emphasis">Can be wagered in Combat and Tasks for altered outcomes.</span> Wager attitional <a href="#exhaustion">Attribute Exhaustion</a> for additional draws in the event of a success.</li>
+          </ol>
+      <h3>Brawn</h3>
+        <p></p>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+  </body>
+</html>
